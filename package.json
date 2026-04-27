@@ -1,0 +1,11 @@
+{
+  "name": "internship-assignment-app-generator",
+  "private": true,
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "echo 'Run backend and frontend separately: npm run dev -w backend && npm run dev -w frontend'",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "lint": "npm run lint -w backend && npm run build -w frontend"
+  }
+}

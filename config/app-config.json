@@ -1,0 +1,49 @@
+{
+  "appName": "Config-Driven CRM Demo",
+  "entities": [
+    {
+      "name": "leads",
+      "label": "Leads",
+      "userScoped": true,
+      "fields": [
+        { "key": "name", "label": "Name", "type": "string", "required": true },
+        { "key": "email", "label": "Email", "type": "email" },
+        { "key": "score", "label": "Score", "type": "number" },
+        { "key": "active", "label": "Active", "type": "boolean" }
+      ]
+    },
+    {
+      "name": "tasks",
+      "label": "Tasks",
+      "userScoped": true,
+      "fields": [
+        { "key": "title", "label": "Title", "type": "string", "required": true },
+        { "key": "dueDate", "label": "Due Date", "type": "date" },
+        { "key": "status", "label": "Status", "type": "string" }
+      ]
+    }
+  ],
+  "views": [
+    { "id": "lead-form", "type": "form", "entity": "leads", "title": { "en": "Lead Form", "es": "Formulario de Leads" } },
+    { "id": "lead-table", "type": "table", "entity": "leads", "title": { "en": "Lead Table", "es": "Tabla de Leads" } },
+    { "id": "task-dashboard", "type": "dashboard", "entity": "tasks", "title": { "en": "Task Dashboard", "es": "Panel de Tareas" } }
+  ],
+  "auth": {
+    "methods": ["email_password", "guest_login"]
+  },
+  "localization": {
+    "defaultLanguage": "en",
+    "languages": ["en", "es"],
+    "translations": {
+      "refresh": { "en": "Refresh", "es": "Actualizar" },
+      "load_app": { "en": "Load App", "es": "Cargar App" },
+      "entities": { "en": "Entities", "es": "Entidades" },
+      "create_record": { "en": "Create Record", "es": "Crear Registro" },
+      "save": { "en": "Save", "es": "Guardar" }
+    }
+  },
+  "notifications": {
+    "emailEnabled": true,
+    "events": ["record_created", "record_updated", "record_deleted", "csv_import"]
+  }
+}
